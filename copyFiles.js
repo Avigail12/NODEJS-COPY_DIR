@@ -14,8 +14,9 @@ function copyFolder(source, target) {
             files = fs.readdirSync(source);
             files.forEach( function (file) {
             var curSource = path.resolve(source, file);
+            // console.log(curSource);
             if (fs.lstatSync(curSource).isDirectory()) {
-                copyFolder( curSource, target);
+                copyFolder( curSource, path.resolve(target, file));
             } else {
                 copyFile(curSource, target);
             }
@@ -34,7 +35,6 @@ function copyFile( source, target ) {
         if (fs.existsSync(target)) {
             if (fs.lstatSync(target).isDirectory()) {
                 target = path.resolve(target, path.basename(source));
-                console.log(target);
             }
         }
         fs.writeFileSync(target, fs.readFileSync(source));
