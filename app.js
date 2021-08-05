@@ -1,24 +1,13 @@
-const { readFile, writeFile } = require('fs').promises
-// const fse = require('fs-extra');
+// const { readFile, writeFile } = require('fs')
+const fs = require('fs')
+const path = require('path');
 require('dotenv').config() 
+const copyFolder = require('./copyFiles');
 
 
-var ncp = require('ncp').ncp;
- 
-ncp.limit = 16;
- 
-ncp(process.env.FOLDER_SRC, process.env.FOLDER_DES, function (err) {
- if (err) {
-   return console.error(err);
- }
- console.log('done!');
-});
+const src_dir = process.env.FOLDER_SRC
+const des_dir = process.env.FOLDER_DES
 
 
-// fse.copySync(process.env.FOLDER_SRC, process.env.FOLDER_DES, function (err) {
-//     if (err) {                
-//       console.error(err);      
-//     } else {
-//       console.log("success!");
-//     }
-//   });
+
+copyFolder(src_dir,des_dir)
