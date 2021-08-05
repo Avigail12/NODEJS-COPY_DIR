@@ -15,7 +15,7 @@ function copyFolder(source, target) {
         files.forEach( function (file) {
             var curSource = path.resolve(source, file);
             if (fs.lstatSync(curSource).isDirectory()) {
-                copyFolderRecursiveSync( curSource, target);
+                copyFolder( curSource, target);
             } else {
                 copyFile(curSource, target);
             }
