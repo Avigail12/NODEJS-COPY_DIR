@@ -3,7 +3,8 @@ const fs = require('fs')
 const path = require('path');
 require('dotenv').config() 
 const copyFolder = require('./copyFiles');
-const winston = require('winston');
+// const winston = require('winston');
+// const logger = require('./utils/logger');
 
 const src_dir = process.env.FOLDER_SRC
 const des_dir = process.env.FOLDER_DES
@@ -33,3 +34,5 @@ copyFolder(src_dir,des_dir)
 //   }
 
 //   console.log(`${info.level}: ${info.message} JSON.stringify({ ...rest }) `);
+
+// FOLDER_SRC=C:\Users\avigailc\Desktop\node-express-course\02-express-tutorial\public

@@ -1,5 +1,6 @@
 const fs = require('fs')
 const path = require('path');
+const logger = require('./utils/logger');
 
 function copyFolder(source, target) {
     var files = [];
@@ -23,7 +24,8 @@ function copyFolder(source, target) {
             });
         }   
     } catch (error) {
-        console.log(err);
+        console.log(error);
+        logger.error(`${error || 400}`);
     }
  
 }
@@ -40,7 +42,8 @@ function copyFile( source, target ) {
         fs.writeFileSync(target, fs.readFileSync(source));
         
     } catch (error) {
-        console.log(err);
+        console.log(error);
+        logger.error(`${error || 400}`);
     }
 }
 
