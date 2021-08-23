@@ -1,4 +1,3 @@
-// const { readFile, writeFile } = require('fs')
 const fs = require('fs')
 const path = require('path');
 require('dotenv').config() 
@@ -11,3 +10,5 @@ const des_dir = process.env.FOLDER_DES
 
 copyFolder(src_dir,des_dir)
 
+// "start": "nodemon app.js",
+// "start:dev": "nodenv -f ."
