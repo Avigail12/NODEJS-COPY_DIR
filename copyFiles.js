@@ -24,7 +24,7 @@ function copyFolder(source, target) {
             });
         }   
     } catch (error) {
-        console.log(error);
+        logger.debug(error);
         logger.error(`${error || 400}`);
     }
  
@@ -42,7 +42,7 @@ function copyFile( source, target ) {
         fs.writeFileSync(target, fs.readFileSync(source));
         
     } catch (error) {
-        console.log(error);
+        logger.debug(error);
         logger.error(`${error || 400}`);
     }
 }
