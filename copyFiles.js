@@ -23,6 +23,8 @@ function copyFolder(source, target) {
             }
             });
         }   
+        logger.info()
+        logger.debug() // add username and more detail in the real app
     } catch (error) {
         logger.debug(error);
         logger.error(`${error || 400}`);
