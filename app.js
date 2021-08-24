@@ -3,7 +3,6 @@ const fs = require('fs')
 const express = require('express');
 require('dotenv').config() 
 const copy = require('./routes/copy')
-// const copyFolder = require('./copyFiles');
 
 // const src_dir = process.env.FOLDER_SRC
 // const des_dir = process.env.FOLDER_DES
